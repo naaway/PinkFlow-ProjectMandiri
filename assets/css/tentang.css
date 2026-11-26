@@ -1,0 +1,4 @@
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.split>img{width:100%;height:430px;object-fit:cover}
+.split p{color:var(--muted);line-height:1.9;max-width:470px}
+@media(max-width:650px){.split{gap:28px}.split>img{height:300px}}

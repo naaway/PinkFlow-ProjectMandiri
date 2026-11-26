@@ -1,0 +1,9 @@
+.catalog{display:grid;grid-template-columns:190px 1fr;gap:40px}
+.filters{display:flex;flex-direction:column;gap:12px}
+.filters h3{font:600 22px 'Playfair Display';color:var(--wine)}
+.filters a{font-size:13px;color:var(--muted);padding:8px 0}
+.filters a:hover{color:var(--pink)}
+.tools{display:flex;gap:10px;margin-bottom:25px}
+.tools input{flex:1}
+.tools input,.tools select,input,textarea,select{padding:13px;border:1px solid var(--line);background:white;border-radius:3px;font:13px 'DM Sans';min-width:0}
+@media(max-width:650px){.catalog{gap:15px}.filters{flex-direction:row;overflow:auto;white-space:nowrap}.filters h3{display:none}.tools{flex-wrap:wrap}.tools input{flex-basis:100%}}

@@ -1,0 +1,7 @@
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{padding:25px;background:white;border-top:3px solid var(--pink)}
+.step>b{font:600 32px 'Playfair Display';color:var(--pink)}
+.step h2{font:600 22px 'Playfair Display';color:var(--wine)}
+.step p{font-size:13px;line-height:1.8;color:var(--muted)}
+@media(max-width:850px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.steps{grid-template-columns:1fr}}

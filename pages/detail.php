@@ -1,0 +1,8 @@
+<?php require_once '../config/database.php';require_once '../includes/functions.php';$base='../';$id=(int)($_GET['id']??0);$s=$conn->prepare("SELECT * FROM products WHERE id=? AND is_active=1");$s->bind_param('i',$id);$s->execute();$p=$s->get_result()->fetch_assoc();if(!$p)exit('Produk tidak ditemukan.');$err='';if($_SERVER['REQUEST_METHOD']==='POST'){check_csrf();$qty=max(1,(int)$_POST['quantity']);if($qty>$p['stock'])$err='Jumlah melebihi stok.';else{$_SESSION['cart'][$id] = min($p['stock'], ($_SESSION['cart'][$id] ?? 0) + $qty);
+        $action = $_POST['action'] ?? 'cart';
+        header('Location: ' . ($action === 'checkout' ? 'checkout.php' : 'cart.php'));
+        exit;}}$pageCss='detail.css';include '../includes/header.php';?>
+<main class="section detail"><div class="detail-img"><img src="<?=e(product_image_url($p['image'], $p['name']))?>" alt="<?=e($p['name'])?>" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80'"></div><div><span class="eyebrow"><?=e($p['category'])?></span><h1><?=e($p['name'])?></h1><h2><?=rp($p['price'])?></h2><p><?=nl2br(e($p['description']))?></p><p>Stok tersedia: <?=$p['stock']?></p><?php if($err):?><p class="error"><?=e($err)?></p><?php endif;?><form method="post"><input type="hidden" name="csrf" value="<?=e(csrf())?>"><label>Jumlah <input type="number" name="quantity" value="1" min="1" max="<?=$p['stock']?>"></label><div class="detail-actions">
+<button class="btn dark" type="submit" name="action" value="cart" <?=$p['stock']<1?'disabled':''?>>🛒</button>
+<button class="btn outline" type="submit" name="action" value="checkout" <?=$p['stock']<1?'disabled':''?>>Checkout ↗</button>
+</div></form></div></main><?php include '../includes/footer.php';?>

@@ -1,0 +1,7 @@
+.cart-layout,.checkout-layout{display:grid;grid-template-columns:1.6fr 1fr;gap:40px}
+.cart-row{display:flex;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.cart-row img{width:105px;height:115px;object-fit:cover}
+.cart-row h3{font:600 20px 'Playfair Display';color:var(--wine)}
+.cart-row input{width:70px}
+.remove{margin-left:auto;border:0;background:none;color:var(--pink);cursor:pointer}
+@media(max-width:650px){.cart-row{gap:12px}.cart-row img{width:80px;height:90px}}

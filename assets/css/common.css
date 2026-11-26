@@ -1,0 +1,133 @@
+*{box-sizing:border-box}
+:root{--pink:#d94f83;--pink2:#f4cbd9;--rose:#f9e5ec;--wine:#762d50;--cream:#fff7f9;--sage:#a75b78;--ink:#38232d;--muted:#805f6d;--line:#eacbd7;--white:#ffffff;--deep:#762d50;--deep-2:#963d66;--pink-soft:#fbe8ee;--lavender:#f4eaf0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,253,251,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1240px;margin:auto;padding:14px 28px;display:flex;align-items:center;gap:32px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--wine);flex:0 0 auto}
+.brand img{width:142px;height:58px;object-fit:contain;background:transparent;border-radius:0}
+.footer .brand img{background:transparent;mix-blend-mode:normal;filter:brightness(0) invert(1)}
+.nav nav{display:flex;gap:27px;margin:auto;font-size:13px}
+.nav nav a{padding:10px 0;position:relative}
+.nav nav a:hover{color:var(--pink)}
+.cart{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:50px;padding:10px 15px;color:var(--wine);font-size:19px;background:#fff}
+.cart i{font-style:normal;background:var(--pink);color:white;border-radius:50%;padding:3px 7px;font-size:11px;line-height:1.2}
+.cart i{font-style:normal;background:var(--pink);color:white;border-radius:50%;padding:3px 7px;font-size:11px}
+.menu-toggle{display:none;border:0;background:none;font-size:23px}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:2.3px;color:var(--pink);text-transform:uppercase}
+h1 em,h2 em{color:var(--pink);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 21px;border-radius:10px;font-weight:700;font-size:12px;border:1px solid transparent;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.btn:hover{box-shadow:0 7px 18px #762d5020}
+.dark{background:var(--wine);color:white}
+.light{background:white;color:var(--wine)}
+.outline{border-color:var(--wine);color:var(--wine)}
+.full{width:100%}
+.simple-link{display:inline-block;margin:20px 0 0 18px;border-bottom:1px solid var(--pink);padding-bottom:5px;font-size:12px;font-weight:700;color:var(--wine)}
+.section{max-width:1240px;margin:auto;padding:88px 28px}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
+.section h2,.section-title h2{font:600 clamp(34px,4vw,52px)/1.12 'Playfair Display',serif;color:var(--wine);margin:12px 0}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.product-img{display:block;background:var(--rose);overflow:hidden;aspect-ratio:4/5;border-radius:16px;position:relative;isolation:isolate}
+.product-img img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .35s ease;will-change:transform;backface-visibility:hidden}
+.product:hover .product-img img{transform:scale(1.035)}
+.product small{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;margin-top:14px;text-transform:uppercase;letter-spacing:.7px}
+.product h3{font:600 20px 'Playfair Display',serif;color:var(--wine);margin:8px 0}
+.footer{background:#3b2932;color:#f9e9ed;padding:60px 28px 20px}
+.footgrid{max-width:1184px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+.footer .brand{color:white}
+.footer .brand small{color:#d9b9c4}
+.footer p,.footer a:not(.brand){display:block;color:#ddc8cf;font-size:12px;margin:12px 0}
+.footer h4{font:600 17px 'Playfair Display';margin:0 0 15px}
+.copyright{max-width:1184px;margin:40px auto 0;padding-top:18px;border-top:1px solid #ffffff2a;color:#d7c1c9;font-size:11px}
+.pagehero{text-align:center;padding:75px 20px 40px}
+.pagehero h1{font-size:clamp(48px,6vw,70px)}
+.pagehero p{margin:0 auto}
+.compact{padding-bottom:10px}
+.empty{text-align:center;padding:55px 20px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.nav{gap:12px}.nav nav{gap:12px}.products{grid-template-columns:repeat(2,1fr)}.footgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.nav{padding:12px 18px}.menu-toggle{display:block;margin-left:auto}.nav nav{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:20px;flex-direction:column;box-shadow:0 12px 20px #0001}.nav nav.open{display:flex}.cart{padding:8px 10px}.section{padding:60px 20px}.section-title{align-items:start;gap:15px;flex-direction:column}.products{gap:15px}.product h3{font-size:17px}.footgrid{grid-template-columns:1fr 1fr}}
+
+
+/* MOTION / LENIS */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+    html.lenis, html.lenis body { scroll-behavior: auto !important; }
+}
+
+/* Stable hover and focus: avoid layout jumps and browser flash effects */
+.product, .product-card, .product-img, .product-img img {
+    transform-origin: center;
+}
+.product, .product-card {
+    transition: none !important;
+}
+a, button, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #d94f83;
+    outline-offset: 3px;
+}
+button:active, .btn:active {
+    transform: none !important;
+    filter: none !important;
+}
+html { scroll-behavior: auto; }
+
+
+/* PinkFlow brand mark: use the tightly-cropped logo so it reads clearly in the header. */
+.brand img {
+    width: 184px;
+    height: 76px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Reveal elements must remain visible even when motion scripts are disabled. */
+.reveal,
+.reveal.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+@media (max-width: 650px) {
+    .brand img {
+        width: 148px;
+        height: 62px;
+    }
+}
+
+/* Logo resmi PinkFlow */
+.brand img {
+    width: 190px;
+    height: 82px;
+    object-fit: contain;
+    object-position: left center;
+}
+.footer .brand img {
+    width: 190px;
+    height: 82px;
+    filter: none;
+    mix-blend-mode: normal;
+}
+.cart {
+    font-size: 0;
+}
+.cart .cart-icon {
+    display: inline-block;
+    font-size: 21px;
+    line-height: 1;
+}
+@media (max-width: 650px) {
+    .brand img { width: 154px; height: 66px; }
+    .footer .brand img { width: 154px; height: 66px; }
+}

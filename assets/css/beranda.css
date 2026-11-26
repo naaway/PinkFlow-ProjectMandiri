@@ -1,0 +1,36 @@
+.hero{max-width:1240px;margin:auto;padding:74px 28px 78px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero h1,.pagehero h1{font:600 clamp(52px,6.2vw,84px)/1.03 'Playfair Display',serif;letter-spacing:-2.5px;margin:20px 0;color:var(--wine)}
+.hero-text>p,.pagehero p{max-width:480px;color:var(--muted);line-height:1.9;font-size:15px}
+.hero-foot{margin-top:65px;color:var(--sage);font-size:11px;letter-spacing:.4px}
+.hero-art{position:relative;padding:0 24px 24px 0}
+.hero-art:before{content:"";position:absolute;inset:35px 0 0 45px;background:var(--pink2);z-index:-1}
+.hero-art img{height:510px;width:100%;object-fit:cover}
+.sticker{position:absolute;right:-18px;top:40px;background:var(--wine);color:white;border-radius:50%;width:116px;height:116px;display:grid;place-content:center;text-align:center;font-size:12px;letter-spacing:2px;transform:rotate(9deg)}
+.marquee{background:var(--wine);color:white;text-align:center;padding:17px 10px;letter-spacing:3px;font-size:10px}
+@media(max-width:850px){.hero{gap:25px}.hero-art img{height:420px}}
+@media(max-width:650px){.hero,.split,.detail,.location,.cart-layout,.checkout-layout,.catalog{grid-template-columns:1fr}.hero{padding:45px 20px}.hero h1{font-size:52px}.hero-art img{height:370px}}
+
+
+.home-location {
+    border-top: 1px solid var(--line);
+}
+
+.home-location-map {
+    position: relative;
+    border: 10px solid var(--rose);
+}
+
+.home-location-map iframe {
+    min-height: 340px;
+}
+
+@media (max-width: 650px) {
+    .home-location-map,
+    .home-location-map iframe {
+        min-height: 300px;
+    }
+}
+
+/* Home palette aligned with the PinkFlow admin studio */
+.hero-art:before { background: #f4cbd9; }
+.hero-foot { color: #8f4665; }

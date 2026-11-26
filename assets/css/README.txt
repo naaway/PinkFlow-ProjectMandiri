@@ -1,0 +1,1 @@
+CSS PinkFlow dipisahkan berdasarkan halaman. common.css berisi aturan umum; beranda.css, katalog.css, detail.css, keranjang.css, checkout.css, custom.css, cara-pesan.css, tentang.css, dan lokasi.css berisi aturan khusus halaman. admin.css khusus panel admin.
